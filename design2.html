@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harrison Olayemi Anjolaoluwa - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styling and Reset --- */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8; /* Light gray background */
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+
+        a {
+            color: #007bff; /* Standard link blue */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: #e6f7ff; /* Very light blue/cyan */
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive; /* Creative font for the main name */
+            font-size: 3.5em;
+            color: #007bff; /* Primary blue for emphasis */
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            color: #555;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        nav a {
+            font-weight: 600;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:nth-child(even) {
+            background-color: #fff; /* Alternate section background */
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #007bff;
+            margin: 10px auto 0;
+        }
+
+        /* --- Specific Section Styles --- */
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        #work ul, #education ul {
+            list-style: none;
+            padding: 0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        #work li, #education li {
+            background-color: #fff;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-left: 5px solid #007bff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+            font-size: 1.05em;
+        }
+
+        /* --- Skills Section --- */
+        #skills ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 900px;
+        }
+
+        #skills li {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #skills li:first-child b { color: #28a745; } /* Green for Soft Skills */
+        #skills li:last-child b { color: #dc3545; } /* Red for Technical Skills */
+        
+        /* --- Contact and Address --- */
+        #contact {
+            background-color: #e6f7ff;
+            padding-bottom: 40px;
+        }
+
+        #contact form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        #contact button {
+            background-color: #28a745; /* Green button */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        #contact button:hover {
+            background-color: #218838;
+        }
+
+        #address {
+            text-align: center;
+            background-color: #333; /* Dark footer */
+            color: #f8f8f8;
+            padding: 40px 0 20px;
+            border-top: none;
+        }
+
+        #address h2 {
+            color: #fff;
+        }
+        
+        #address h2::after {
+            background-color: #fff;
+        }
+
+        #address ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        #address li {
+            padding: 5px 10px;
+            font-size: 0.9em;
+        }
+
+        #address a {
+            color: #ffd700; /* Gold/Yellow links in footer */
+        }
+
+        #address p {
+            font-size: 0.8em;
+            margin-top: 15px;
+        }
+        
+        /* --- Hobbies Styling (Inline display) --- */
+        #hobbies ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #hobbies li {
+            background-color: #ffe0b2; /* Soft orange background */
+            color: #5d4037;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Harrison Olayemi Anjolaoluwa</h1>
+            <p><b>Engineer (Full-Stack & Mobile) | JavaScript, React, Flutter, C# | Turning Ideas into Functional Solutions</b></p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Core Skills</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>About</h2>
+            <p>Versatile Software Engineer with 2+ years of experience building scalable web and mobile applications. Proficient in **React, JavaScript, C#, SQL, Flutter, Kotlin, and Firebase**, with strong expertise in both frontend and backend development. Adept at designing responsive user interfaces, implementing secure databases, and integrating cloud-based services to optimize performance. Passionate about developing user-friendly, accessible solutions and skilled in problem-solving, collaboration, and delivering high-quality results in fast-paced environments.</p>
+        </section>
+
+        <section id="work">
+            <h2>Work Experience</h2>
+            <ul>
+                <li>**FullStack Developer Intern** - NUPAT Technologies Limited - April 2024 - Sep 2024</li>
+                <li>**MTU NACOS Welfare Director and Member** - Mountain Top University - Nov 2022– Aug 2025</li>
+                <li>**Code Crafters Frontend Assistant Lead** - Mountain Top University - 2025</li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>**B.Sc. Software Engineering** - Mountain Top University - 2021</li>
+                <li>**Secondary School Leaving Certificate** - Providence Heights Schools - 2017</li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Core Skills</h2>
+            <ul>
+                <li><b>Soft Skills:</b> Research, Leadership, Mentorship, Writing, Team-work, Marketing, Collaboration, Problem-Solving, Effective Communication, Adaptability, Analytical Thinking, Interpersonal skills, Time Management.</li>
+                <li><b>Technical Skills:</b> HTML, CSS, Excel, Flutter, Dart, Java, JavaScript, React, Firebase, SQL, C#, Kotlin, Git, Agile/Scrum methodologies, UI/UX collaboration, Debugging & performance optimization, Unit testing.</li>
+            </ul>
+        </section>
+
+        <section id="hobbies">
+            <h2>Hobbies</h2>
+            <ul>
+                <li>Coding</li>
+                <li>Reading</li>
+                <li>Singing</li>
+                <li>Listening to Music</li>
+                <li>Watching Movies</li>
+                <li>Cooking</li>
+                <li>Writing</li>
+                <li>Sleeping</li>
+            </ul>
+        </section>
+    </div> <section id="contact">
+        <div class="container">
+            <h2>Drop a Message</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter full name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Your message..."></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="address">
+        <div class="container">
+            <h2>Connect</h2>
+            <ul>
+                <li>Address: 35, Akinkunmi street, Surulere, Lagos, Nigeria </li>
+                <li>Phone: 07062562610, 09046145352</li>
+                <li><a href="mailto:olayemianjolaoluwa24@gmail.com" target="_blank">Email: olayemianjolaoluwa24@gmail.com</a></li>
+                <li><a href="https://www.linkedin.com/in/olayemi-harrison-65aa48342/" target="_blank">LinkedIn: Olayemi Harrison</a></li>
+                <li><a href="https://github.com/ola0ashton" target="_blank">Github: Olayemi Harrison</a></li>
+            </ul>
+            <p>Designed with passion by olatechie. Copyright 2025</p>
+        </div>
+    </section>
+
+</body>
+</html>
